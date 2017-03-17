@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="mobile-agent" content="format=html5;url=" />
+    <meta charset="utf-8">
+    <title>事件日历-可滚动</title>
+
+    <meta name="apple-mobile-web-app-title" content="" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" media="(device-height: 568px)">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="grey" />
+    <style type="text/css">
+        *{box-sizing:border-box}html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1;font-family:"Helvetica Neue","microsoft yahei"}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{background-color:#ff9;color:#000;text-decoration:none}mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}textarea{resize:none;outline:0}legend{display:none}html,body{height:100%;background:#f3f3f3}.page_type_h5{position:relative;max-width:750px;width:100%;margin:0 auto;background:#fff;overflow:hidden;}
+    </style>
+    <link href="http://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css" rel="stylesheet">
+    <link rel=stylesheet href="lazyPicker-1.2.0.min.css">
+    <link rel=stylesheet href="calendar.css">
+</head>
+<body>
+    <div class="page_type_h5">
+        <div>
+            <p class="year-style date-picker"></p>
+            <div class="swiper-container">
+                <div class="swiper-wrapper J_scrollDate">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+    <script src="http://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+    <script type="text/javascript" src="lazyPicker-1.2.0.min.js"></script>
+    <script src="calendar.js"></script>
+    <script type="text/javascript">
+        Calendar.init('.swiper-wrapper', {
+                    actionDate: {//有事件的日期
+                        '2016': {
+                            '10': [
+                                '2',
+                                '5',
+                                '6'
+                            ]
+                        }
+                    }
+                });
+
+        var picker = new LazyPicker('.date-picker', {
+            onChange: function(data){
+                Calendar.update({
+                    checkDate: data[3],//选择的日期
+                    actionDate: {
+                        '2017': {
+                            '3': [
+                                '2',
+                                '5',
+                                '6'
+                            ]
+                        }
+                    }
+                });
+                
+            }
+        });
+    </script>
+</body>
+</html>

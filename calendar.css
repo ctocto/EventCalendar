@@ -1,0 +1,112 @@
+/*日期start*/
+.page_type_h5{
+    background:#489bfe;
+}
+.year-style {
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    color: #fff;
+    font-size: 0.64102564rem;
+    background:url(../img/xiala-icon2.png) no-repeat 66% center;
+    background-size:10px 6px;
+}
+.week-wrap .week-item, .date-wrap .date-item {
+    width: 1.58119658rem;
+    text-align: center;
+    color: #fff;
+    margin-left:3.05%;
+    height:30px;
+    font-size: 0.64102564rem;
+}
+@media only screen and (min-width: 375px) {
+    html {
+        font-size:23.4px!important;
+    }
+    .week-wrap .week-item, .date-wrap .date-item {
+        margin-left:4.05%;
+    }
+}
+@media only screen and (min-width: 414px) {
+    html {
+        font-size:25.8px!important;
+    }
+    .week-wrap .week-item, .date-wrap .date-item {
+        margin-left:4.05%;
+    }
+}
+
+@media only screen and (min-width: 481px) {
+    html {
+      
+        font-size:30px!important;
+    }
+    .week-wrap .week-item, .date-wrap .date-item {
+        margin-left:4.05%;
+    }
+}
+.date-wrap .date-item {
+    position: relative;
+    height:1.58119658rem;
+    line-height:1.58119658rem;
+    border-radius: 50%;
+}
+.date-wrap .tx_dateItem::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    margin-left: -1.5px;
+    width: 3px;
+    height: 3px;
+    background: #fff;
+    border-radius: 50%;
+}
+.now-date.date-item {
+    border: 1px solid #fff;
+}
+.tap-active-date {
+    background: #fff;
+    color: #1e82d2 !important;
+}
+.date-wrap .tap-active-date.tx_dateItem::after {
+    background: #1e82d2;
+}
+[data-action-state]::after{
+    content:"";
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:#fff;
+    bottom:4px;
+    left:50%;
+    margin-left:-1.5px;
+    border-radius: 50%;
+}
+.hs-date-active{
+    border:1px solid #fff;
+}
+.hs-date-active-bg::after{
+    background:#3c94fe;
+}
+.hs-date-active-bg{
+    background:#fff;
+    color:#3c94fe!important;
+}
+/*[data-now-date][data-action-state]::after{
+    background:#3c94fe !important;
+}*/
+[data-pre-date],[data-next-date]{
+    color:#ccc!important;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clearfix:before, .container:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+/* IE 6/7 */
+.clearfix { zoom: 1; }
